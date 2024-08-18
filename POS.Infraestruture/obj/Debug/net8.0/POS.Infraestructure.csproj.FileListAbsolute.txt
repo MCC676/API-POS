@@ -1,0 +1,34 @@
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Infraestructure.deps.json
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Infraestructure.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Infraestructure.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Domain.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Utilities.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Domain.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Utilities.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.AssemblyInfo.cs
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.csproj.CopyComplete
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\refint\POS.Infraestructure.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Infraestruture\obj\Debug\net8.0\ref\POS.Infraestructure.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Infraestructure.deps.json
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Infraestructure.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Infraestructure.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Domain.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Utilities.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Domain.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\bin\Debug\net8.0\POS.Utilities.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.csproj.AssemblyReference.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.AssemblyInfoInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.AssemblyInfo.cs
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.csproj.CoreCompileInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.csproj.CopyComplete
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\refint\POS.Infraestructure.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\ref\POS.Infraestructure.dll

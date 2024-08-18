@@ -1,0 +1,22 @@
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\bin\Debug\net8.0\POS.Utilities.deps.json
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\bin\Debug\net8.0\POS.Utilities.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\bin\Debug\net8.0\POS.Utilities.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.AssemblyInfoInputs.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.AssemblyInfo.cs
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\refint\POS.Utilities.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Utilities\obj\Debug\net8.0\ref\POS.Utilities.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\bin\Debug\net8.0\POS.Utilities.deps.json
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\bin\Debug\net8.0\POS.Utilities.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\bin\Debug\net8.0\POS.Utilities.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.AssemblyInfoInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.AssemblyInfo.cs
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.csproj.CoreCompileInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\refint\POS.Utilities.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\ref\POS.Utilities.dll

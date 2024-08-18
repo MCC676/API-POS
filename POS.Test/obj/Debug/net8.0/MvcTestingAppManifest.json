@@ -1,0 +1,7 @@
+{
+  "POS.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Api",
+  "POS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Application",
+  "POS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Domain",
+  "POS.Infraestructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Infraestruture",
+  "POS.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Utilities"
+}

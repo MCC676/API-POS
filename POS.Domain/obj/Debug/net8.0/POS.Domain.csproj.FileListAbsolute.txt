@@ -1,0 +1,28 @@
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.deps.json
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.runtimeconfig.json
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.csproj.AssemblyReference.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.AssemblyInfoInputs.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.AssemblyInfo.cs
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\refint\POS.Domain.dll
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.pdb
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.genruntimeconfig.cache
+C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Domain\obj\Debug\net8.0\ref\POS.Domain.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.deps.json
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.runtimeconfig.json
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\bin\Debug\net8.0\POS.Domain.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.csproj.AssemblyReference.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.AssemblyInfoInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.AssemblyInfo.cs
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.csproj.CoreCompileInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\refint\POS.Domain.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.pdb
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.genruntimeconfig.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\ref\POS.Domain.dll
