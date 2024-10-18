@@ -32,3 +32,4 @@ D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructur
 D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\refint\POS.Infraestructure.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\ref\POS.Infraestructure.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Infraestruture\obj\Debug\net8.0\POS.Infraestructure.sourcelink.json

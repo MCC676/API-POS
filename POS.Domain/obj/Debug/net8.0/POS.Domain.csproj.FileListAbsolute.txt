@@ -26,3 +26,4 @@ D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\refint\POS.Domain.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.genruntimeconfig.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\ref\POS.Domain.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.sourcelink.json

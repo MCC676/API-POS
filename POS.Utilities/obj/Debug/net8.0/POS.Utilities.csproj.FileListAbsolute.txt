@@ -20,3 +20,4 @@ D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\refint\POS.Utilities.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\ref\POS.Utilities.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Utilities\obj\Debug\net8.0\POS.Utilities.sourcelink.json
