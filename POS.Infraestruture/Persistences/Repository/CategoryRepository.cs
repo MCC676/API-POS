@@ -36,9 +36,9 @@ namespace POS.Infraestructure.Persistences.Repository
                 categories = categories.Where(x => x.State.Equals(filters.StateFilter));
             }
 
-            if(!string.IsNullOrEmpty(filters.StarDate) && !string.IsNullOrEmpty(filters.EndDate))
+            if(!string.IsNullOrEmpty(filters.StartDate) && !string.IsNullOrEmpty(filters.EndDate))
             {
-                categories = categories.Where(x => x.AuditCreateDate >= Convert.ToDateTime(filters.StarDate) && x.AuditCreateDate <= Convert.ToDateTime(filters.EndDate).AddDays(1));
+                categories = categories.Where(x => x.AuditCreateDate >= Convert.ToDateTime(filters.StartDate) && x.AuditCreateDate <= Convert.ToDateTime(filters.EndDate).AddDays(1));
             }
                                                       
             if (filters.Sort is null) filters.Sort = "Id";

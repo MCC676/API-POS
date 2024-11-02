@@ -483,17 +483,17 @@ C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.
 C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.genruntimeconfig.cache
 C:\Users\MCC\Documents\Proyectos NET\APP-POS\POS.Test\obj\Debug\net8.0\ref\POS.Test.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\CoverletSourceRootsMapping_POS.Test
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\testhost.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Api.deps.json
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Api.runtimeconfig.json
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\appsettings.Development.json
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\appsettings.json
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Api.exe
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\testhost.exe
-D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\testhost.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\MvcTestingAppManifest.json
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Microsoft.TestPlatform.AdapterUtilities.dll
-D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Api.deps.json
-D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Api.runtimeconfig.json
-D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Api.exe
-D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\MvcTestingAppManifest.json
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Test.deps.json
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Test.runtimeconfig.json
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Test.dll
@@ -804,9 +804,11 @@ D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Azure.Core.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Azure.Identity.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Azure.Storage.Blobs.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Azure.Storage.Common.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\FluentValidation.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Testing.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Microsoft.AspNetCore.TestHost.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -960,6 +962,7 @@ D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.GeneratedMSBuildEdi
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.AssemblyInfoInputs.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.AssemblyInfo.cs
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.csproj.CoreCompileInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.sourcelink.json
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.csproj.CopyComplete
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\refint\POS.Test.dll

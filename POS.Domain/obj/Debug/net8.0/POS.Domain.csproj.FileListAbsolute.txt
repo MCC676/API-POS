@@ -21,9 +21,9 @@ D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.GeneratedMSBuil
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.AssemblyInfoInputs.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.AssemblyInfo.cs
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.csproj.CoreCompileInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.sourcelink.json
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\refint\POS.Domain.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.genruntimeconfig.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\ref\POS.Domain.dll
-D:\UDEMY\API-NET6\APP-POS\POS.Domain\obj\Debug\net8.0\POS.Domain.sourcelink.json

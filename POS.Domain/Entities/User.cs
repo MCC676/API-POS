@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace POS.Domain.Entities;
 
-namespace POS.Domain.Entities;
-
-public partial class User
+public partial class User : BaseEntity
 {
-    public int UserId { get; set; }
+    public User()
+    {
+        Purcharses = new HashSet<Purcharse>();
+        Sales = new HashSet<Sale>();
+        UserRoles = new HashSet<UserRole>();
+        UsersBranchOffices = new HashSet<UsersBranchOffice>();
+    }
 
     public string? UserName { get; set; }
 
@@ -14,21 +17,6 @@ public partial class User
     public string? Email { get; set; }
 
     public string? Image { get; set; }
-
-    public int? State { get; set; }
-
-    public int AuditCreateUser { get; set; }
-
-    public DateTime AuditCreateDate { get; set; }
-
-    public int? AuditUpdateUser { get; set; }
-
-    public DateTime? AuditUpdateDate { get; set; }
-
-    public int? AuditDeleteUser { get; set; }
-
-    public DateTime AuditDeleteDate { get; set; }
-
     public virtual ICollection<Purcharse> Purcharses { get; set; } = new List<Purcharse>();
 
     public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();

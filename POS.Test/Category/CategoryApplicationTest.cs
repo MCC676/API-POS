@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using POS.Application.Dtos.Request;
+using POS.Application.Dtos.Category.Request;
 using POS.Application.Interfaces;
 using POS.Utilities.Static;
 

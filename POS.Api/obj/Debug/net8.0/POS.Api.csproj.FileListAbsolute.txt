@@ -164,10 +164,12 @@ D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Azure.Core.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Azure.Identity.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Azure.Storage.Blobs.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Azure.Storage.Common.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\FluentValidation.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Humanizer.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -290,6 +292,7 @@ D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.AssemblyInfo.cs
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.csproj.CoreCompileInputs.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.sourcelink.json
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\staticwebassets.build.json
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\staticwebassets.development.json
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\staticwebassets\msbuild.POS.Api.Microsoft.AspNetCore.StaticWebAssets.props
@@ -304,4 +307,3 @@ D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\refint\POS.Api.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.genruntimeconfig.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\ref\POS.Api.dll
-D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.sourcelink.json

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7sGze5SkoTTVo5u3DTy6VmnDUN2T1cPd/i9hyp40lFx1s+S6X8vVldFEZ7Via8ZW7vgHJrGNZDPbRwNQGJugHw==",
+  "dgSpecHash": "sxxt/ep5RBdNHttGIvvCLitxU2dJ/vHqYlDg6+UrEbq2RCfq2EzA31AREHE97nZuUWm34rCw7Oq9wWFbpGfQIw==",
   "success": true,
   "projectFilePath": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Application\\POS.Application.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\MCC\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\MCC\\.nuget\\packages\\azure.storage.blobs\\12.19.1\\azure.storage.blobs.12.19.1.nupkg.sha512",
     "C:\\Users\\MCC\\.nuget\\packages\\azure.storage.common\\12.18.1\\azure.storage.common.12.18.1.nupkg.sha512",
+    "C:\\Users\\MCC\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\MCC\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\MCC\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\MCC\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",

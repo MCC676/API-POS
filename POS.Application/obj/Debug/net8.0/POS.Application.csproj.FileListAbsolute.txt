@@ -633,9 +633,9 @@ D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.Gener
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.AssemblyInfoInputs.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.AssemblyInfo.cs
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.csproj.CoreCompileInputs.cache
+D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.sourcelink.json
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.csproj.CopyComplete
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\refint\POS.Application.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\ref\POS.Application.dll
-D:\UDEMY\API-NET6\APP-POS\POS.Application\obj\Debug\net8.0\POS.Application.sourcelink.json
