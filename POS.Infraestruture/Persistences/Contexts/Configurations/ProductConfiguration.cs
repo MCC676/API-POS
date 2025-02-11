@@ -8,20 +8,18 @@ namespace POS.Infraestructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.HasKey(e => e.ProductId).HasName("PK__Products__B40CC6CD3A424A5F");
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Id)
+                .HasColumnName("ProductId");
 
             builder.Property(e => e.Name).HasMaxLength(50);
-            builder.Property(e => e.SellPrice).HasColumnType("decimal(18, 2)");
 
-            builder.HasOne(d => d.Category).WithMany(p => p.Products)
+            builder.HasOne(d => d.Category)
+                .WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Products__Catego__628FA481");
-
-            builder.HasOne(d => d.Provider).WithMany(p => p.Products)
-                .HasForeignKey(d => d.ProviderId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Products__Provid__6383C8BA");
         }
     }
 }

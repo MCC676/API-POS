@@ -13,5 +13,9 @@
         public const string MESSAGE_TOKEN_ERROR = "El usuario y/o contraseña es incorreta, compuébala";
         public const string MESSAGE_VALIDATE = "Hay errores de validación.";
         public const string MESSAGE_FAILED = "Operación fallida.";
+        public const string MESSAGE_EXCEPTION = "Hubo un error inesperado, comunicarse con el administrador(676mcc@gmail.com).";
+        public const string MESSAGE_GOOGLE_ERROR = "Su cuenta no se encuentra regsitrada en el sistema.";
+        public const string MESSAGE_AUTH_TYPE_GOOGLE = "Por favor, ingrese con la opción de google.";
+        public const string MESSAGE_AUTH_TYPE = "Su cuenta no se encuentra registrada en el sistema.";
     }
 }

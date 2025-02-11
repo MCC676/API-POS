@@ -11,6 +11,7 @@ namespace POS.Application.Dtos.User.Request
         public string? Email { get; set; }
 
         public IFormFile? Image { get; set; }
+        public string? AuthType { get; set; }
         public int? state { get; set; }
     }
 }

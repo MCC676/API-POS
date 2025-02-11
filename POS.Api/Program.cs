@@ -1,6 +1,8 @@
 using POS.Api.Extensions;
 using POS.Application.Extensions;
 using POS.Infraestructure.Extensions;
+using POS.Utilities.AppSettings;
+using WatchDog;
 
 var builder = WebApplication.CreateBuilder(args);
 var Configuration = builder.Configuration;
@@ -20,6 +22,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwagger();
+
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("GoogleSettings"));
 
 builder.Services.AddCors(options =>
 {
@@ -44,6 +48,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseWatchDogExceptionLogger();
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
@@ -51,6 +57,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseWatchDog(configurations =>
+{
+    configurations.WatchPageUsername = Configuration.GetSection("WatchDog:Username").Value;
+    configurations.WatchPagePassword = Configuration.GetSection("WatchDog:Password").Value;
+});
 
 app.Run();
 

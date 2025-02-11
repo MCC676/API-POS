@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using POS.Domain.Entities;
-using POS.Infraestructure.Commons.Bases.Request;
-using POS.Infraestructure.Helpers;
 using POS.Infraestructure.Persistences.Contexts;
 using POS.Infraestructure.Persistences.Interfaces;
 using POS.Utilities.Static;
-using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 
 namespace POS.Infraestructure.Persistences.Repository
@@ -23,7 +20,7 @@ namespace POS.Infraestructure.Persistences.Repository
         public async Task<IEnumerable<T>> GetAllAsync()
         {
             var getAll = await _entity
-                .Where(x => x.State.Equals((int)StateTypes.Active) && x.AuditDeleteUser == null).AsNoTracking().ToListAsync();
+                .Where(x => x.State.Equals((int)StateTypes.Active) && x.AuditDeleteUser == null && x.AuditDeleteDate == null).AsNoTracking().ToListAsync();
             return getAll; 
         }
         public async Task<T> GetByIdAsync(int id)
@@ -44,8 +41,8 @@ namespace POS.Infraestructure.Persistences.Repository
 
         public async Task<bool> EditAsync(T entity)
         {
-            entity.AuditCreateUser = 1;
-            entity.AuditCreateDate = DateTime.Now;
+            entity.AuditUpdateUser = 1;
+            entity.AuditUpdateDate = DateTime.Now;
 
             _context.Update(entity);
             _context.Entry(entity).Property(x => x.AuditCreateUser).IsModified = false;
@@ -74,14 +71,21 @@ namespace POS.Infraestructure.Persistences.Repository
             if (filter != null) query = query.Where(filter);
             return query;
         }
-
-        public IQueryable<TDTO> Ordering<TDTO>(BasePaginationRequest request, IQueryable<TDTO> queryable, bool pagination = false) where TDTO : class
+            
+        public IQueryable<T> GetAllQuerable()
         {
-            IQueryable<TDTO> queryDto = request.Order == "desc" ? queryable.OrderBy($"{request.Sort} descending") : queryable.OrderBy($"{request.Sort} ascending");
+            var getAllQuery = GetEntityQuery(x => x.AuditDeleteUser == null && x.AuditDeleteDate == null);
+            return getAllQuery;
+        }
 
-            if (pagination) queryDto = queryDto.Paginate(request);
+        public async Task<IEnumerable<T>> GetSelectAsync()
+        {
+            var getAll = await _entity
+                .Where(x => x.State.Equals((int)StateTypes.Active))
+                .AsNoTracking()
+                .ToListAsync();
 
-            return queryDto;
+            return getAll;
         }
     }
 }

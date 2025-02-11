@@ -17,6 +17,7 @@ public partial class User : BaseEntity
     public string? Email { get; set; }
 
     public string? Image { get; set; }
+    public string? AuthType { get; set; }
     public virtual ICollection<Purcharse> Purcharses { get; set; } = new List<Purcharse>();
 
     public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();

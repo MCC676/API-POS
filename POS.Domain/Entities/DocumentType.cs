@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace POS.Domain.Entities;
 
-namespace POS.Domain.Entities;
-
-public partial class DocumentType
+public partial class DocumentType : BaseEntity
 {
-    public int DocumentTypeId { get; set; }
+    public DocumentType()
+    {
+        Clients = new HashSet<Client>();
+        Providers = new HashSet<Provider>();
+    }
 
     public string? Code { get; set; }
 
@@ -13,9 +14,7 @@ public partial class DocumentType
 
     public string? Abbreviation { get; set; }
 
-    public int? State { get; set; }
+    public virtual ICollection<Client> Clients { get; set; }
 
-    public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
-
-    public virtual ICollection<Provider> Providers { get; set; } = new List<Provider>();
+    public virtual ICollection<Provider> Providers { get; set; }
 }

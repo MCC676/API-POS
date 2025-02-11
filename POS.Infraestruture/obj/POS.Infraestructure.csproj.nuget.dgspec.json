@@ -128,13 +128,17 @@
               "target": "Package",
               "version": "[12.22.2, )"
             },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.104.2, )"
+            },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.2, )"
             },
             "System.Linq.Dynamic.Core": {
               "target": "Package",
-              "version": "[1.3.8, )"
+              "version": "[1.6.0.1, )"
             }
           },
           "imports": [

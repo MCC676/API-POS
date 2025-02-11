@@ -1,30 +1,47 @@
-﻿using Microsoft.Extensions.Configuration;
-using POS.Infraestructure.FileStorage;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Configuration;
+using POS.Domain.Entities;
 using POS.Infraestructure.Persistences.Contexts;
 using POS.Infraestructure.Persistences.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace POS.Infraestructure.Persistences.Repository
 {
-    internal class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly PosContext _context;
-        public ICategoryRepository Category { get; private set; }
 
-        public IUserRepository User { get; private set; }
+        public IUserRepository _user = null!;
 
-        public IAzureStorage Storage { get; private set; }
+        public IGenericRepository<Category> _category = null!;
+
+        public IGenericRepository<Provider> _provider = null!;
+
+        public IGenericRepository<DocumentType> _documentType = null!;
+        public IWarehouseRepository _warehouse = null!;
+        public IGenericRepository<Product> _product = null!;
+        public IProductStockRepository _productStock = null!;
 
         public UnitOfWork(PosContext context, IConfiguration configuration)
         {
             _context = context;
-            Category = new CategoryRepository(_context);
-            User = new UserRepository(_context);
-            Storage = new AzureStorage(configuration);
+        }
+
+        public IGenericRepository<Category> Category => _category ?? new GenericRepository<Category>(_context);
+        public IGenericRepository<Provider> Provider => _provider ?? new GenericRepository<Provider>(_context);
+        public IGenericRepository<DocumentType> DocumentType => _documentType ?? new GenericRepository<DocumentType>(_context);
+        public IUserRepository User => _user ?? new UserRepository(_context);
+
+        public IWarehouseRepository Warehouse => _warehouse ?? new WarehouseRepository(_context);
+
+        public IGenericRepository<Product> Product => _product ?? new GenericRepository<Product>(_context);
+
+        public IProductStockRepository ProductStock => _productStock ?? new ProductStockRepository(_context);
+
+        public IDbTransaction BeginTransaction()
+        {
+            var transaction = _context.Database.BeginTransaction();
+            return transaction.GetDbTransaction();
         }
 
         public void Dispose()

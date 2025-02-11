@@ -15,45 +15,47 @@ namespace POS.Infraestructure.Persistences.Contexts
         {
         }
 
-        public virtual DbSet<BranchOffice> BranchOffices { get; set; }
+        public virtual DbSet<BranchOffice> BranchOffices { get; set; } = null!;
 
-        public virtual DbSet<Business> Businesses { get; set; }
+        public virtual DbSet<Business> Businesses { get; set; } = null!;
 
-        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; } = null!;
 
-        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Client> Clients { get; set; } = null!;
 
-        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Department> Departments { get; set; } = null!;
 
-        public virtual DbSet<District> Districts { get; set; }
+        public virtual DbSet<District> Districts { get; set; } = null!;
 
-        public virtual DbSet<DocumentType> DocumentTypes { get; set; }
+        public virtual DbSet<DocumentType> DocumentTypes { get; set; } = null!;
 
-        public virtual DbSet<Menu> Menus { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; } = null!;
 
-        public virtual DbSet<MenuRole> MenuRoles { get; set; }
+        public virtual DbSet<MenuRole> MenuRoles { get; set; } = null!;
 
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; } = null!;
 
-        public virtual DbSet<Provider> Providers { get; set; }
+        public virtual DbSet<Provider> Providers { get; set; } = null!;
 
-        public virtual DbSet<Province> Provinces { get; set; }
+        public virtual DbSet<Province> Provinces { get; set; } = null!;
 
-        public virtual DbSet<Purcharse> Purcharses { get; set; }
+        public virtual DbSet<Purcharse> Purcharses { get; set; } = null!;
 
-        public virtual DbSet<PurcharseDetail> PurcharseDetails { get; set; }
+        public virtual DbSet<PurcharseDetail> PurcharseDetails { get; set; } = null!;
 
-        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Role> Roles { get; set; } = null!;
 
-        public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; } = null!;
 
-        public virtual DbSet<SaleDetail> SaleDetails { get; set; }
+        public virtual DbSet<SaleDetail> SaleDetails { get; set; } = null!;
 
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; } = null!;
 
-        public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; } = null!;
 
-        public virtual DbSet<UsersBranchOffice> UsersBranchOffices { get; set; }
+        public virtual DbSet<UsersBranchOffice> UsersBranchOffices { get; set; } = null!;
+        public virtual DbSet<Warehouse> Warehouses { get; set; } = null!;
+        public virtual DbSet<ProductStock> ProductStocks { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

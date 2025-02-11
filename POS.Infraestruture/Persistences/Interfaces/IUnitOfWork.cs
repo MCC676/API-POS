@@ -1,15 +1,20 @@
-﻿using POS.Infraestructure.FileStorage;
+﻿using POS.Domain.Entities;
+using System.Data;
 
 namespace POS.Infraestructure.Persistences.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
         //Declaración o matrícula de nuestras interfaces a nivel de repositorio
-        ICategoryRepository Category { get; }
-        IUserRepository User { get; }
-
-        IAzureStorage Storage { get; }
+        IGenericRepository<Category> Category {  get; }
+        IGenericRepository<Provider> Provider {  get; }
+        IGenericRepository<DocumentType> DocumentType {  get; }
+        IUserRepository User { get; }       
+        IWarehouseRepository Warehouse { get; }
+        IGenericRepository<Product> Product { get; }
+        IProductStockRepository ProductStock { get; }
         void SaveChanges();
         Task SaveChangesAsync();
+        IDbTransaction BeginTransaction();
     }
 }

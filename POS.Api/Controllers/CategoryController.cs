@@ -1,10 +1,9 @@
-﻿
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using POS.Application.Commons.Bases.Request;
 using POS.Application.Dtos.Category.Request;
 using POS.Application.Interfaces;
-using POS.Infraestructure.Commons.Bases.Request;
+using POS.Utilities.Static;
 
 namespace POS.Api.Controllers
 {
@@ -14,15 +13,25 @@ namespace POS.Api.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryApplication _categoryApplication;
+        private readonly IGenerateExcelApplication _generateExcelApplication;
 
-        public CategoryController(ICategoryApplication categoryApplication)
+        public CategoryController(ICategoryApplication categoryApplication, IGenerateExcelApplication generateExcelApplication)
         {
             _categoryApplication = categoryApplication;
+            _generateExcelApplication = generateExcelApplication;
         }
-        [HttpPost]
-        public async Task<IActionResult> ListCategories([FromBody] BaseFiltersRequest filters)
+        [HttpGet]
+        public async Task<IActionResult> ListCategories([FromQuery] BaseFiltersRequest filters)
         {
             var response = await _categoryApplication.ListCategories(filters);
+
+            if ((bool)filters.Download!)
+            {
+                var columnNames = ExcelColumnNames.GetColumnsCategories();
+                var fileBytes = _generateExcelApplication.GenerateToExcel(response.Data!, columnNames);
+                return File(fileBytes, ContentType.ContentTypeExcel);
+            }
+
             return Ok(response);
         }
         [HttpGet("Select")]
