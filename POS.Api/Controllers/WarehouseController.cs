@@ -46,5 +46,19 @@ namespace POS.Api.Controllers
             var response = await _warehouseApplication.RegisterWarehouse(requestDto);
             return Ok(response);
         }
+
+        [HttpPut("Edit/{warehouseId:int}")]
+        public async Task<IActionResult> EditWarehouse(int warehouseId, [FromBody] WarehouseRequestDto requestDto)
+        {
+            var response = await _warehouseApplication.EditWarehouse(warehouseId, requestDto);
+            return Ok(response);
+        }
+
+        [HttpPut("Remove/{warehouseId:int}")]
+        public async Task<IActionResult> RemoveWarehouse(int warehouseId)
+        {
+            var response = await _warehouseApplication.RemoveWarehouse(warehouseId);
+            return Ok(response);
+        }
     }
 }

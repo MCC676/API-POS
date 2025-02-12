@@ -3,18 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using POS.Application.Commons.Bases.Request;
 using POS.Application.Commons.Bases.Response;
 using POS.Application.Commons.Ordering;
-using POS.Application.Dtos.Category.Response;
 using POS.Application.Dtos.Warehouse.Request;
 using POS.Application.Dtos.Warehouse.Response;
 using POS.Application.Interfaces;
 using POS.Domain.Entities;
 using POS.Infraestructure.Persistences.Interfaces;
 using POS.Utilities.Static;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WatchDog;
 
 namespace POS.Application.Services
@@ -146,6 +140,46 @@ namespace POS.Application.Services
 
                 await _unitOfWork.ProductStock.RegisterProductStock(newProductStock);
             }
+        }
+
+        public async Task<BaseResponse<bool>> EditWarehouse(int warehouseId, WarehouseRequestDto requestDto)
+        {
+            var response = new BaseResponse<bool>();
+
+            try
+            {
+                var warehouse = _mapper.Map<Warehouse>(requestDto);
+                warehouse.Id = warehouseId;
+                response.Data = await _unitOfWork.Warehouse.EditAsync(warehouse);
+                response.IsSuccess = true;
+                response.Message = ReplyMessage.MESSAGE_UPDATE;
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
+        }
+
+        public async Task<BaseResponse<bool>> RemoveWarehouse(int warehouseId)
+        {
+            var response = new BaseResponse<bool>();
+
+            try
+            {
+                response.Data = await _unitOfWork.Warehouse.RemoveAsync(warehouseId);
+                response.IsSuccess = true;
+                response.Message = ReplyMessage.MESSAGE_DELETE;
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
         }
     }
 }
