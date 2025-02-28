@@ -22,7 +22,9 @@ namespace POS.Application.Extensions
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
             services.AddScoped<IOrderingQuery, OrderingQuery>();
+            services.AddScoped<IFileStorageLocalApplication, FileStorageLocalApplication>();
             services.AddScoped<IGenerateExcelApplication, GenerateExcelApplication>();
             services.AddScoped<ICategoryApplication, CategoryApplication>();
             services.AddScoped<IUserApplication, UserApplication>();
@@ -30,6 +32,9 @@ namespace POS.Application.Extensions
             services.AddScoped<IAuthApplication, AuthApplication>();
             services.AddScoped<IDocumentTypeApplication, DocumentTypeApplication>();
             services.AddScoped<IWarehouseApplication, WarehouseApplication>();
+            services.AddScoped<IProductApplication, ProductApplication>();
+            services.AddScoped<IProductStockApplication, ProductStockApplication>();
+            services.AddScoped<IPurcharseApplication, PurcharseApplication>();
 
             services.AddWatchDog(configuration);
 

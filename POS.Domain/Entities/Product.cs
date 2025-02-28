@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace POS.Domain.Entities;
+﻿namespace POS.Domain.Entities;
 
 public partial class Product : BaseEntity
 {
@@ -11,7 +8,7 @@ public partial class Product : BaseEntity
     public int StockMax { get; set; }
 
     public string? Image { get; set; }
-
+    public decimal UnitSalePrice { get; set; }
     public int CategoryId { get; set; }
 
     public virtual Category Category { get; set; } = null!;

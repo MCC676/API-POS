@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "BF/QOrgaq7IHcLjcLbY4QUfaN3HpiDVSeWx1SEYEb44=",
+  "Hash": "rxUfxSRlnCtmyon68ydz714dciPRYrCJdrr6RBjlP6Q=",
   "Source": "POS.Api",
   "BasePath": "_content/POS.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "POS.Api\\wwwroot",
+      "Source": "POS.Api",
+      "ContentRoot": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Api\\wwwroot\\",
+      "BasePath": "_content/POS.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Api\\wwwroot\\products\\e5bc2936-9642-425e-8a4a-c38369048ce1.jpg",
+      "SourceId": "POS.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Api\\wwwroot\\",
+      "BasePath": "_content/POS.Api",
+      "RelativePath": "products/e5bc2936-9642-425e-8a4a-c38369048ce1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\products\\e5bc2936-9642-425e-8a4a-c38369048ce1.jpg"
+    }
+  ]
 }

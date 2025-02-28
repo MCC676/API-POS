@@ -357,3 +357,4 @@ D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\refint\POS.Api.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\POS.Api.genruntimeconfig.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Api\obj\Debug\net8.0\ref\POS.Api.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Api\bin\Debug\net8.0\POS.Api.staticwebassets.runtime.json

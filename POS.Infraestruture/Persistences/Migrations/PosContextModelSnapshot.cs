@@ -477,6 +477,9 @@ namespace POS.Infraestructure.Persistences.Migrations
                     b.Property<int>("StockMin")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("UnitSalePrice")
+                        .HasColumnType("decimal(10,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
@@ -599,11 +602,12 @@ namespace POS.Infraestructure.Persistences.Migrations
 
             modelBuilder.Entity("POS.Domain.Entities.Purcharse", b =>
                 {
-                    b.Property<int>("PurcharseId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("PurchaseId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurcharseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AuditCreateDate")
                         .HasColumnType("datetime2");
@@ -623,78 +627,56 @@ namespace POS.Infraestructure.Persistences.Migrations
                     b.Property<int?>("AuditUpdateUser")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProviderId")
+                    b.Property<decimal>("Igv")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<string>("Observation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProviderId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("PurcharseDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("State")
+                    b.Property<int>("State")
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("Tax")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<decimal>("SubTotal")
+                        .HasColumnType("decimal(10,2)");
 
-                    b.Property<decimal?>("Total")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("decimal(10,2)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("WarehouseId")
                         .HasColumnType("int");
 
-                    b.HasKey("PurcharseId")
-                        .HasName("PK__Purchars__A98C674B1032F6BF");
+                    b.HasKey("Id");
 
                     b.HasIndex("ProviderId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("WarehouseId");
 
                     b.ToTable("Purcharses");
                 });
 
             modelBuilder.Entity("POS.Domain.Entities.PurcharseDetail", b =>
                 {
-                    b.Property<int>("PurcharseDetailId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("PurcharseId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurcharseDetailId"));
-
-                    b.Property<DateTime>("AuditCreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("AuditCreateUser")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("AuditDeleteDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("AuditDeleteUser")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("AuditUpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(10, 2)");
 
-                    b.Property<int?>("AuditUpdateUser")
-                        .HasColumnType("int");
+                    b.Property<decimal>("UnitPurchasePrice")
+                        .HasColumnType("decimal(10, 2)");
 
-                    b.Property<decimal?>("Price")
-                        .HasColumnType("decimal(18, 2)");
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PurcharseId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("PurcharseDetailId")
-                        .HasName("PK__Purchars__7353248B683F784C");
+                    b.HasKey("PurcharseId", "ProductId");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("PurcharseId");
 
                     b.ToTable("PurcharseDetails");
                 });
@@ -1106,28 +1088,34 @@ namespace POS.Infraestructure.Persistences.Migrations
                 {
                     b.HasOne("POS.Domain.Entities.Provider", "Provider")
                         .WithMany()
-                        .HasForeignKey("ProviderId");
+                        .HasForeignKey("ProviderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("POS.Domain.Entities.User", "User")
-                        .WithMany("Purcharses")
-                        .HasForeignKey("UserId")
-                        .HasConstraintName("FK__Purcharse__UserI__693CA210");
+                    b.HasOne("POS.Domain.Entities.Warehouse", "Warehouse")
+                        .WithMany()
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Provider");
 
-                    b.Navigation("User");
+                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("POS.Domain.Entities.PurcharseDetail", b =>
                 {
                     b.HasOne("POS.Domain.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("POS.Domain.Entities.Purcharse", "Purcharse")
                         .WithMany("PurcharseDetails")
                         .HasForeignKey("PurcharseId")
-                        .HasConstraintName("FK__Purcharse__Purch__6754599E");
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Product");
 
@@ -1283,8 +1271,6 @@ namespace POS.Infraestructure.Persistences.Migrations
 
             modelBuilder.Entity("POS.Domain.Entities.User", b =>
                 {
-                    b.Navigation("Purcharses");
-
                     b.Navigation("Sales");
 
                     b.Navigation("UserRoles");

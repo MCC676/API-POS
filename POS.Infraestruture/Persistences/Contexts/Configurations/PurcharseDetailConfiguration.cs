@@ -8,14 +8,10 @@ namespace POS.Infraestructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<PurcharseDetail> builder)
         {
-            builder.HasKey(e => e.PurcharseDetailId).HasName("PK__Purchars__7353248B683F784C");
+            builder.HasKey(e => new { e.PurcharseId, e.ProductId });
 
-            builder.Property(e => e.Price).HasColumnType("decimal(18, 2)");
-            
-
-            builder.HasOne(d => d.Purcharse).WithMany(p => p.PurcharseDetails)
-                .HasForeignKey(d => d.PurcharseId)
-                .HasConstraintName("FK__Purcharse__Purch__6754599E");
+            builder.Property(e => e.UnitPurchasePrice).HasColumnType("decimal(10, 2)");
+            builder.Property(e => e.Total).HasColumnType("decimal(10, 2)");
         }
     }
 }

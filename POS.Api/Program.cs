@@ -25,6 +25,8 @@ builder.Services.AddSwagger();
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("GoogleSettings"));
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: Cors,
@@ -51,6 +53,8 @@ if (app.Environment.IsDevelopment())
 app.UseWatchDogExceptionLogger();
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 
 app.UseAuthentication();
 

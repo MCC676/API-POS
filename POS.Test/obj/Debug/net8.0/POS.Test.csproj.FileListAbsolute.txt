@@ -1021,3 +1021,4 @@ D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\refint\POS.Test.dll
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.pdb
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\POS.Test.genruntimeconfig.cache
 D:\UDEMY\API-NET6\APP-POS\POS.Test\obj\Debug\net8.0\ref\POS.Test.dll
+D:\UDEMY\API-NET6\APP-POS\POS.Test\bin\Debug\net8.0\POS.Api.staticwebassets.runtime.json
