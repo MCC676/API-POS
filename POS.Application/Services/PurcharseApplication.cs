@@ -3,16 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using POS.Application.Commons.Bases.Request;
 using POS.Application.Commons.Bases.Response;
 using POS.Application.Commons.Ordering;
-using POS.Application.Dtos.Product.Response;
+using POS.Application.Dtos.Purcharse.Request;
 using POS.Application.Dtos.Purcharse.Response;
 using POS.Application.Interfaces;
+using POS.Domain.Entities;
 using POS.Infraestructure.Persistences.Interfaces;
 using POS.Utilities.Static;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WatchDog;
 
 namespace POS.Application.Services
@@ -51,10 +47,10 @@ namespace POS.Application.Services
                     }
                 }
 
-                if (filters.StateFilter is not null)
-                {
-                    purcharses = purcharses.Where(x => x.State.Equals(filters.StateFilter));
-                }
+                //if (filters.StateFilter is not null)
+                //{
+                //    purcharses = purcharses.Where(x => x.State.Equals(filters.StateFilter));
+                //}
 
                 if (!string.IsNullOrEmpty(filters.StartDate) && !string.IsNullOrEmpty(filters.EndDate))
                 {
@@ -79,6 +75,106 @@ namespace POS.Application.Services
                 WatchLogger.Log(ex.Message);
             }
 
+            return response;
+        }
+
+        public async Task<BaseResponse<PurcharseByIdResponseDto>> PurcharseById(int purcharseId)
+        {
+            var response = new BaseResponse<PurcharseByIdResponseDto>();
+
+            try
+            {
+                var purcharse = await _unitOfWork.Purcharse.GetByIdAsync(purcharseId);
+
+                if (purcharse is null)
+                {
+                    response.IsSuccess = false;
+                    response.Message = ReplyMessage.MESSAGE_QUERY_EMPTY;
+                }
+
+                var purcharseDetail = await _unitOfWork.PurcharseDetail.GetPurcharseDetailByPurcharseId(purcharse!.Id);
+                purcharse.PurcharseDetails = purcharseDetail.ToList();
+
+                response.IsSuccess = true;
+                response.Data = _mapper.Map<PurcharseByIdResponseDto>(purcharse);
+                response.Message = ReplyMessage.MESSAGE_QUERY;
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
+        }
+
+        public async Task<BaseResponse<bool>> RegisterPurcharse(PurcharseRequestDto requestDto)
+        {
+            var response = new BaseResponse<bool>();
+
+            using var transaction = _unitOfWork.BeginTransaction();
+
+            try
+            {
+                var purcharse = _mapper.Map<Purcharse>(requestDto);
+                purcharse.State = (int)StateTypes.Active;
+                await _unitOfWork.Purcharse.RegisterAsync(purcharse);
+
+                foreach (var item in purcharse.PurcharseDetails)
+                {
+                    var productStock = await _unitOfWork.ProductStock
+                        .GetProductStockByProductId(item.ProductId, requestDto.WarehouseId);
+                    productStock.CurrentStock += item.Quantity;
+                    productStock.PurchasePrice = item.UnitPurchasePrice;
+                    await _unitOfWork.ProductStock.UpdateCurrentByProducts(productStock);
+                }
+
+                transaction.Commit();
+                response.IsSuccess = true;
+                response.Message = ReplyMessage.MESSAGE_SAVE;
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
+        }
+
+        public async Task<BaseResponse<bool>> CancelPurcharse(int purcharseId)
+        {
+            var response = new BaseResponse<bool>();
+
+            using var transaction = _unitOfWork.BeginTransaction();
+
+            try
+            {
+                var purcharse = await PurcharseById(purcharseId);
+
+                response.Data = await _unitOfWork.Purcharse.RemoveAsync(purcharseId);
+
+                foreach (var item in purcharse.Data!.PurcharseDetails)
+                {
+                    var productStock = await _unitOfWork.ProductStock
+                        .GetProductStockByProductId(item.ProductId, purcharse.Data.WarehouseId);
+                    productStock.CurrentStock -= item.Quantity;
+                    await _unitOfWork.ProductStock.UpdateCurrentByProducts(productStock);
+                }
+
+                transaction.Commit();
+                response.IsSuccess = true;
+                response.Message = ReplyMessage.MESSAGE_DELETE;
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
             return response;
         }
     }

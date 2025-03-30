@@ -12913,6 +12913,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.1",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.5",
       "POS.Application >= 1.0.0",
+      "POS.Domain >= 1.0.0",
       "POS.Infraestructure >= 1.0.0",
       "POS.Utilities >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
@@ -12953,6 +12954,9 @@
           "projectReferences": {
             "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Application\\POS.Application.csproj": {
               "projectPath": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Application\\POS.Application.csproj"
+            },
+            "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Domain\\POS.Domain.csproj": {
+              "projectPath": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Domain\\POS.Domain.csproj"
             },
             "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Infraestruture\\POS.Infraestructure.csproj": {
               "projectPath": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Infraestruture\\POS.Infraestructure.csproj"

@@ -202,11 +202,12 @@ namespace POS.Infraestructure.Persistences.Migrations
 
             modelBuilder.Entity("POS.Domain.Entities.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("ClientId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClientId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsUnicode(false)
@@ -256,8 +257,7 @@ namespace POS.Infraestructure.Persistences.Migrations
                     b.Property<int>("State")
                         .HasColumnType("int");
 
-                    b.HasKey("ClientId")
-                        .HasName("PK__Clients__E67E1A24A554C60B");
+                    b.HasKey("Id");
 
                     b.HasIndex("DocumentTypeId");
 
@@ -1125,9 +1125,8 @@ namespace POS.Infraestructure.Persistences.Migrations
             modelBuilder.Entity("POS.Domain.Entities.Sale", b =>
                 {
                     b.HasOne("POS.Domain.Entities.Client", "Client")
-                        .WithMany("Sales")
-                        .HasForeignKey("ClientId")
-                        .HasConstraintName("FK__Sales__ClientId__6C190EBB");
+                        .WithMany()
+                        .HasForeignKey("ClientId");
 
                     b.HasOne("POS.Domain.Entities.User", "User")
                         .WithMany("Sales")
@@ -1211,11 +1210,6 @@ namespace POS.Infraestructure.Persistences.Migrations
             modelBuilder.Entity("POS.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("POS.Domain.Entities.Client", b =>
-                {
-                    b.Navigation("Sales");
                 });
 
             modelBuilder.Entity("POS.Domain.Entities.Department", b =>

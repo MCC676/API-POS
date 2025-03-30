@@ -7,7 +7,7 @@ using POS.Utilities.Static;
 
 namespace POS.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProviderController : ControllerBase
@@ -33,6 +33,13 @@ namespace POS.Api.Controllers
                 return File(fileBytes, ContentType.ContentTypeExcel);
             }
 
+            return Ok(response);
+        }
+
+        [HttpGet("Select")]
+        public async Task<IActionResult> ListSelectProviders()
+        {
+            var response = await _providerApplication.ListSelectProviders();
             return Ok(response);
         }
 

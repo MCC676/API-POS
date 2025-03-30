@@ -2,11 +2,6 @@
 using POS.Domain.Entities;
 using POS.Infraestructure.Persistences.Contexts;
 using POS.Infraestructure.Persistences.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace POS.Infraestructure.Persistences.Repository
 {
@@ -17,6 +12,15 @@ namespace POS.Infraestructure.Persistences.Repository
         public ProductStockRepository(PosContext context)
         {
             _context = context;
+        }
+
+        public async Task<ProductStock> GetProductStockByProductId(int productId, int warehouseId)
+        {
+            var productStock = await _context.ProductStocks
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.ProductId == productId && x.WarehouseId == warehouseId);
+
+            return productStock!;
         }
 
         public async Task<IEnumerable<ProductStock>> GetProductStockByWarehouse(int productId)
@@ -39,6 +43,13 @@ namespace POS.Infraestructure.Persistences.Repository
         public async Task<bool> RegisterProductStock(ProductStock productStock)
         {
             await _context.AddAsync(productStock);
+            var recordsAffected = await _context.SaveChangesAsync();
+            return recordsAffected > 0;
+        }
+
+        public async Task<bool> UpdateCurrentByProducts(ProductStock productStock)
+        {
+            _context.Update(productStock);
             var recordsAffected = await _context.SaveChangesAsync();
             return recordsAffected > 0;
         }

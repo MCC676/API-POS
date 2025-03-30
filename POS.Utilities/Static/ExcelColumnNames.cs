@@ -85,7 +85,7 @@ namespace POS.Utilities.Static
             };
             return columnsProperties;
         }
-        #endregion
+        #endregion       
 
         #region GetColumnsPurcharse
         public static List<(string ColumnName, string PropertyName)> GetColumnsPurcharse()
@@ -95,7 +95,25 @@ namespace POS.Utilities.Static
                 ("PROVEEDOR","Provider"),
                 ("ALMACÉN", "Warehouse"),
                 ("MONTO TOTAL", "TotalAmount"),
-                ("FECHA DE COMPRA", "DateOfPurcharse"),
+                ("FECHA DE COMPRA", "DateOffPurcharse"),
+            };
+            return columnsProperties;
+        }
+        #endregion
+
+        #region ColumnsClients
+        public static List<(string ColumnName, string PropertyName)> GetColumnsClients()
+        {
+            var columnsProperties = new List<(string ColumnName, string PropertyName)>
+            {
+                ("NOMBRE", "Name"),
+                ("EMAIL", "Email"),
+                ("TIPO DE DOCUMENTO", "DocumentType"),
+                ("N° DE DOCUMENTO", "DocumentNumber"),
+                ("DIRECCION", "Address"),
+                ("TELEFONO", "phone"),
+                ("FECHA DE CREACIÓN", "AuditCreateDate"),
+                ("ESTADO", "StateClient")
             };
             return columnsProperties;
         }

@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.1",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.5",
           "POS.Application": "1.0.0",
+          "POS.Domain": "1.0.0",
           "POS.Infraestructure": "1.0.0",
           "POS.Utilities": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"

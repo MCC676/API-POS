@@ -57,6 +57,7 @@ namespace POS.Infraestructure.Persistences.Repository
 
             entity!.AuditDeleteUser = 1;
             entity!.AuditDeleteDate = DateTime.Now;
+            entity.State = 0;
 
             _context.Update(entity);
 
@@ -81,7 +82,8 @@ namespace POS.Infraestructure.Persistences.Repository
         public async Task<IEnumerable<T>> GetSelectAsync()
         {
             var getAll = await _entity
-                .Where(x => x.State.Equals((int)StateTypes.Active))
+                .Where(x => x.State
+                .Equals((int)StateTypes.Active) && x.AuditDeleteUser == null && x.AuditDeleteDate == null)
                 .AsNoTracking()
                 .ToListAsync();
 

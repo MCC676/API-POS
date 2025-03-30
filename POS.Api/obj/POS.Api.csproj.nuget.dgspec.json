@@ -36,6 +36,9 @@
               "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Application\\POS.Application.csproj": {
                 "projectPath": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Application\\POS.Application.csproj"
               },
+              "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Domain\\POS.Domain.csproj": {
+                "projectPath": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Domain\\POS.Domain.csproj"
+              },
               "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Infraestruture\\POS.Infraestructure.csproj": {
                 "projectPath": "D:\\UDEMY\\API-NET6\\APP-POS\\POS.Infraestruture\\POS.Infraestructure.csproj"
               },

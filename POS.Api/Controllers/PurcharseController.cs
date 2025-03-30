@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using POS.Application.Commons.Bases.Request;
+using POS.Application.Dtos.Purcharse.Request;
+using POS.Application.Dtos.Warehouse.Request;
 using POS.Application.Interfaces;
+using POS.Application.Services;
 using POS.Utilities.Static;
 
 namespace POS.Api.Controllers
@@ -30,6 +32,27 @@ namespace POS.Api.Controllers
                 var fileBytes = _generateExcelApplication.GenerateToExcel(response.Data!, columnNames);
                 return File(fileBytes, ContentType.ContentTypeExcel);
             }
+            return Ok(response);
+        }
+
+        [HttpGet("{purcharseId:int}")]
+        public async Task<IActionResult> PurcharseById(int purcharseId)
+        {
+            var response = await _purcharseApplication.PurcharseById(purcharseId);
+            return Ok(response);
+        }
+
+        [HttpPost("Register")]
+        public async Task<IActionResult> RegisterPurcharse([FromBody] PurcharseRequestDto requestDto)
+        {
+            var response = await _purcharseApplication.RegisterPurcharse(requestDto);
+            return Ok(response);
+        }
+
+        [HttpPut("Cancel/{purcharseId:int}")]
+        public async Task<IActionResult> RemovePurcharse(int purcharseId)
+        {
+            var response = await _purcharseApplication.CancelPurcharse(purcharseId);
             return Ok(response);
         }
     }

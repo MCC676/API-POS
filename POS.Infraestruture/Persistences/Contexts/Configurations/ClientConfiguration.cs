@@ -8,12 +8,17 @@ namespace POS.Infraestructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<Client> builder)
         {
-            builder.HasKey(e => e.ClientId).HasName("PK__Clients__E67E1A24A554C60B");
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Id)
+                .HasColumnName("ClientId");
 
             builder.Property(e => e.Address).IsUnicode(false);
+
             builder.Property(e => e.DocumentNumber)
                 .HasMaxLength(20)
                 .IsUnicode(false);
+
             builder.Property(e => e.Email)
                 .HasMaxLength(255)
                 .IsUnicode(false);

@@ -2,6 +2,7 @@
 using POS.Application.Commons.Bases.Request;
 using POS.Application.Dtos.Warehouse.Request;
 using POS.Application.Interfaces;
+using POS.Application.Services;
 using POS.Utilities.Static;
 
 namespace POS.Api.Controllers
@@ -30,6 +31,13 @@ namespace POS.Api.Controllers
                 var filesBytes = _generateExcelApplication.GenerateToExcel(response.Data!, columnNames);
                 return File(filesBytes, ContentType.ContentTypeExcel);
             }
+            return Ok(response);
+        }
+
+        [HttpGet("Select")]
+        public async Task<IActionResult> ListSelectWarehouses()
+        {
+            var response = await _warehouseApplication.ListSelectWarehouses();
             return Ok(response);
         }
 

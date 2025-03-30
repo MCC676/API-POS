@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using POS.Application.Commons.Bases.Request;
 using POS.Application.Commons.Bases.Response;
 using POS.Application.Commons.Ordering;
+using POS.Application.Commons.Select.Response;
 using POS.Application.Dtos.Warehouse.Request;
 using POS.Application.Dtos.Warehouse.Response;
 using POS.Application.Interfaces;
@@ -68,7 +69,34 @@ namespace POS.Application.Services
                 WatchLogger.Log(ex.Message);
             }
             return response;
-        }        
+        }
+
+        public async Task<BaseResponse<IEnumerable<SelectResponse>>> ListSelectWarehouses()
+        {
+            var response = new BaseResponse<IEnumerable<SelectResponse>>();
+            try
+            {
+                var providers = await _unitOfWork.Warehouse.GetSelectAsync();
+
+                if (providers is null)
+                {
+                    response.IsSuccess = false;
+                    response.Message = ReplyMessage.MESSAGE_QUERY_EMPTY;
+                    return response;
+                }
+                response.IsSuccess = true;
+                response.Data = _mapper.Map<IEnumerable<SelectResponse>>(providers);
+                response.Message = ReplyMessage.MESSAGE_QUERY;
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
+        }
 
         public async Task<BaseResponse<WarehouseByIdResponseDto>> WarehousesById(int warehouseId)
         {
@@ -181,5 +209,6 @@ namespace POS.Application.Services
             }
             return response;
         }
+
     }
 }
