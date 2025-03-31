@@ -4,7 +4,6 @@ public partial class User : BaseEntity
 {
     public User()
     {
-        Sales = new HashSet<Sale>();
         UserRoles = new HashSet<UserRole>();
         UsersBranchOffices = new HashSet<UsersBranchOffice>();
     }
@@ -17,8 +16,6 @@ public partial class User : BaseEntity
 
     public string? Image { get; set; }
     public string? AuthType { get; set; }
-    public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();
-
     public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
 
     public virtual ICollection<UsersBranchOffice> UsersBranchOffices { get; set; } = new List<UsersBranchOffice>();

@@ -8,18 +8,24 @@ namespace POS.Infraestructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<Sale> builder)
         {
-            builder.HasKey(e => e.SaleId).HasName("PK__Sales__1EE3C3FFDB03EA4D");
+           // builder.HasKey(e => e.SaleId).HasName("PK__Sales__1EE3C3FFDB03EA4D");
+           builder.HasKey(e => e.Id);
 
-            builder.Property(e => e.Tax).HasColumnType("decimal(18, 2)");
-            builder.Property(e => e.Total).HasColumnType("decimal(18, 2)");
+            builder.Property(e => e.Id)
+                .HasColumnName("saleId");
+
+            builder.Property(e => e.VoucherNumber)
+                .HasMaxLength(30)
+                .IsUnicode(false);
+
+            builder.Property(e => e.SubTotal).HasColumnType("decimal(10,2)");
+            builder.Property(e => e.Igv).HasColumnType("decimal(10,2)");
+            builder.Property(e => e.TotalAmount).HasColumnType("decimal(10,2)");
+
 
             //builder.HasOne(d => d.Client).WithMany(p => p.Sales)
             //    .HasForeignKey(d => d.ClientId)
             //    .HasConstraintName("FK__Sales__ClientId__6C190EBB");
-
-            builder.HasOne(d => d.User).WithMany(p => p.Sales)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Sales__UserId__6D0D32F4");
         }
     }
 }

@@ -118,5 +118,20 @@ namespace POS.Utilities.Static
             return columnsProperties;
         }
         #endregion
+
+        #region ColumnsSales
+        public static List<(string ColumnName, string PropertyName)> GetColumnsSales()
+        {
+            var columnsProperties = new List<(string ColumnName, string PropertyName)>
+            {
+                ("COMPROBANTE", "VoucherDescription"),
+                ("N° DE DOCUMENTO", "VoucherNumber"),
+                ("CLIENTE", "Client"),
+                ("MONTO TOTAL", "TotalAmount"),
+                ("FECHA DE VENTA", "DateofSale")
+            };
+            return columnsProperties;
+        }
+        #endregion
     }
 }
