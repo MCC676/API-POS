@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using POS.Application.Commons.Bases.Request;
+using POS.Application.Dtos.Purcharse.Request;
+using POS.Application.Dtos.Sale.Request;
 using POS.Application.Interfaces;
+using POS.Application.Services;
 using POS.Utilities.Static;
 
 namespace POS.Api.Controllers
@@ -29,6 +32,20 @@ namespace POS.Api.Controllers
                 var fileBytes = _generateExcelApplication.GenerateToExcel(response.Data!, columnNames);
                 return File(fileBytes, ContentType.ContentTypeExcel);
             }
+            return Ok(response);
+        }
+
+        [HttpGet("{saleId:int}")]
+        public async Task<IActionResult> SaleById(int saleId)
+        {
+            var response = await _saleApplication.SaleById(saleId);
+            return Ok(response);
+        }
+
+        [HttpPost("Register")]
+        public async Task<IActionResult> RegisterSale([FromBody] SaleRequestDto requestDto)
+        {
+            var response = await _saleApplication.RegisterSale(requestDto);
             return Ok(response);
         }
     }

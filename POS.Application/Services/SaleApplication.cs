@@ -3,8 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using POS.Application.Commons.Bases.Request;
 using POS.Application.Commons.Bases.Response;
 using POS.Application.Commons.Ordering;
+using POS.Application.Dtos.Purcharse.Response;
+using POS.Application.Dtos.Sale.Request;
 using POS.Application.Dtos.Sale.Response;
 using POS.Application.Interfaces;
+using POS.Domain.Entities;
 using POS.Infraestructure.Persistences.Interfaces;
 using POS.Utilities.Static;
 using WatchDog;
@@ -75,6 +78,72 @@ namespace POS.Application.Services
                 WatchLogger.Log(ex.Message);
             }
 
+            return response;
+        }
+
+        public async Task<BaseResponse<SaleByIdResponseDto>> SaleById(int saleId)
+        {
+            var response = new BaseResponse<SaleByIdResponseDto>();
+
+            try
+            {
+                var sales = await _unitOfWork.Sale.GetByIdAsync(saleId);
+
+                if (sales is null)
+                {
+                    response.IsSuccess = false;
+                    response.Message = ReplyMessage.MESSAGE_QUERY_EMPTY;
+                    return response;
+                }
+
+                var saleDetail = await _unitOfWork.SaleDetail.GetSaleDetailBySaleId(sales.Id);
+                sales.SaleDetails = saleDetail.ToList();
+
+                response.IsSuccess = true;
+                response.Data = _mapper.Map<SaleByIdResponseDto>(sales);
+                response.Message = ReplyMessage.MESSAGE_QUERY;
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
+        }
+
+        public async Task<BaseResponse<bool>> RegisterSale(SaleRequestDto requestDto)
+        {
+            var response = new BaseResponse<bool>();
+
+            using var transaction = _unitOfWork.BeginTransaction();
+
+            try
+            {
+                var sale = _mapper.Map<Sale>(requestDto);
+                sale.State = (int)StateTypes.Active;
+                await _unitOfWork.Sale.RegisterAsync(sale);
+
+                foreach (var item in sale.SaleDetails)
+                {
+                    var productStock = await _unitOfWork.ProductStock
+                        .GetProductStockByProductId(item.ProductId, requestDto.WarehouseId);
+                    productStock.CurrentStock -= item.Quantity;
+                    await _unitOfWork.ProductStock.UpdateCurrentByProducts(productStock);
+                }
+
+                transaction.Commit();
+                response.IsSuccess = true;
+                response.Message = ReplyMessage.MESSAGE_SAVE;
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
             return response;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using POS.Application.Dtos.Sale.Request;
 using POS.Application.Dtos.Sale.Response;
 using POS.Domain.Entities;
 
@@ -14,8 +15,27 @@ namespace POS.Application.Mappers
                 .ForMember(x => x.Client, x=> x.MapFrom(y => y.Client.Name))
                 .ForMember(x => x.Warehouse, x=> x.MapFrom(y => y.Warehouse.Name))
                 .ForMember(x => x.DateofSale, x=> x.MapFrom(y => y.AuditCreateDate))
-                .ReverseMap()
-                ;
+                .ReverseMap();
+
+            CreateMap<Sale, SaleByIdResponseDto>()
+                .ForMember(x => x.SaleId, x => x.MapFrom(y => y.Id))
+                .ForMember(x => x.DateOfSale, x => x.MapFrom(y => y.AuditCreateDate))
+                .ReverseMap();
+
+            CreateMap<SaleDetail, SaleDetailByIdResponseDto>()
+                .ForMember(x => x.productId, x => x.MapFrom(y => y.ProductId))
+                .ForMember(x => x.Image, x => x.MapFrom(y => y.Product!.Image))
+                .ForMember(x => x.Code, x => x.MapFrom(y => y.Product!.Code))
+                .ForMember(x => x.Name, x => x.MapFrom(y => y.Product!.Name))
+                .ForMember(x => x.TotalAmount, x => x.MapFrom(y => y.Total))
+                .ReverseMap();
+
+            CreateMap<SaleRequestDto, Sale>();
+
+            CreateMap<SaleDetailRequestDto, SaleDetail>();
+
+
+
         }
     }
 }
