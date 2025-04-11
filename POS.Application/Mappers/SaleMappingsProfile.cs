@@ -30,11 +30,19 @@ namespace POS.Application.Mappers
                 .ForMember(x => x.TotalAmount, x => x.MapFrom(y => y.Total))
                 .ReverseMap();
 
+            CreateMap<Product, ProductStockByWarehouseIdResponseDto>()
+                .ForMember(x => x.ProductId, x => x.MapFrom(y => y.Id))
+                .ForMember(x => x.Image, x => x.MapFrom(y => y.Image))
+                .ForMember(x => x.Code, x => x.MapFrom(y => y.Code))
+                .ForMember(x => x.Name, x => x.MapFrom(y => y.Name))
+                .ForMember(x => x.Category, x => x.MapFrom(y => y.Category.Name))
+                .ForMember(x => x.UnitSalePrice, x => x.MapFrom(y => y.UnitSalePrice))
+                .ForMember(x => x.CurrentStock, x => x.MapFrom(y => y.ProductStocks.Sum(x => x.CurrentStock)))
+                .ReverseMap();
+
             CreateMap<SaleRequestDto, Sale>();
 
             CreateMap<SaleDetailRequestDto, SaleDetail>();
-
-
 
         }
     }

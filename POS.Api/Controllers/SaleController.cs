@@ -48,5 +48,19 @@ namespace POS.Api.Controllers
             var response = await _saleApplication.RegisterSale(requestDto);
             return Ok(response);
         }
+
+        [HttpPut("Cancel/{saleId:int}")]
+        public async Task<IActionResult> CancelSale(int saleId)
+        {
+            var response = await _saleApplication.CancelSale(saleId);
+            return Ok(response);
+        }
+
+        [HttpGet("ProductStockByWarehouse")]
+        public async Task<IActionResult> GetProductStockByWarehouseId([FromQuery] BaseFiltersRequest filters)
+        {
+            var response = await _saleApplication.GetProductStockByWarehouseId(filters);
+            return Ok(response);
+        }
     }
 }

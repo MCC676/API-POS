@@ -146,5 +146,76 @@ namespace POS.Application.Services
             }
             return response;
         }
+
+        public async Task<BaseResponse<bool>> CancelSale(int saleId)
+        {
+            var response = new BaseResponse<bool>();
+
+            using var transaction = _unitOfWork.BeginTransaction();
+
+            try
+            {
+                var sale = await SaleById(saleId);
+                response.Data = await _unitOfWork.Sale.RemoveAsync(saleId);
+
+                foreach (var item in sale.Data!.saleDetails)
+                {
+                    var productStock = await _unitOfWork.ProductStock
+                        .GetProductStockByProductId(item.productId, sale.Data.WarehouseId);
+                    productStock.CurrentStock += item.Quantity;
+                    await _unitOfWork.ProductStock.UpdateCurrentByProducts(productStock);
+                }
+
+                transaction.Commit();
+                response.IsSuccess = true;
+                response.Message = ReplyMessage.MESSAGE_CANCEL;
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
+        }
+
+        public async Task<BaseResponse<IEnumerable<ProductStockByWarehouseIdResponseDto>>> GetProductStockByWarehouseId(BaseFiltersRequest filters)
+        {
+            var response = new BaseResponse<IEnumerable<ProductStockByWarehouseIdResponseDto>>();
+
+            try
+            {
+                var products = _unitOfWork.SaleDetail.GetProductStockByWarehouseId(filters.Id);
+
+                if (filters.NumFilter is not null && !string.IsNullOrEmpty(filters.TextFilter))
+                {
+                    switch (filters.NumFilter)
+                    {
+                        case 1:
+                            products = products.Where(x => x.Code!.Contains(filters.TextFilter));
+                            break;
+                        case 2:
+                            products = products.Where(x => x.Name!.Contains(filters.TextFilter));
+                            break;  
+                    }
+                }
+
+                filters.Sort ??= "Id";
+                var items = await _orderingQuery.Ordering(filters, products, !(bool)filters.Download!).ToListAsync();
+
+                response.IsSuccess = true;
+                response.TotalRecords = await products.CountAsync();
+                response.Data = _mapper.Map<IEnumerable<ProductStockByWarehouseIdResponseDto>>(items);
+                response.Message = ReplyMessage.MESSAGE_QUERY;
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_EXCEPTION;
+                WatchLogger.Log(ex.Message);
+            }
+            return response;
+        }
     }
 }
